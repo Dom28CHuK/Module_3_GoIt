@@ -23,8 +23,25 @@ public class MoonComputerTests {
 
         scanner.close();
     }
+
+    public  void testLogicalOperators() {
+        Scanner scanner = new Scanner(System.in);
+        boolean value1 = scanner.nextBoolean();
+        boolean value2 = scanner.nextBoolean();
+        boolean value3 = scanner.nextBoolean();
+
+        boolean result1 = value1 & value2 & value3;
+        boolean result2 = value1 ^ value2 ^ value3;
+
+        System.out.println(result1 + " " + result2);
+        scanner.close();
+    }
+
+
     public static void main(String[] args) {
-        MoonComputerTests computerTests = new MoonComputerTests();
-        computerTests.testMath();
+//        MoonComputerTests computerTests = new MoonComputerTests();
+//        computerTests.testMath();
+
+        new MoonComputerTests().testLogicalOperators();
     }
 }
