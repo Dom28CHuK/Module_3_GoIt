@@ -7,13 +7,24 @@ public class MoonComputerTests {
         String str = scanner.nextLine();
         System.out.println("Your string is " + str);
         scanner.close();
-
-
     }
 
-    //Test output on Hello Java standard input
+    public void testMath() {
+        Scanner scanner = new Scanner(System.in);
+        int number1 = scanner.nextInt();
+        int number2 = scanner.nextInt();
+
+        int resultSum = number1 + number2;
+        int resultSub = number1 - number2;
+        int resultMyl = number1 * number2;
+        int resultDiv = number1 / number2;
+
+        System.out.println(resultSum + " " + resultSub + " " + resultMyl + " " + resultDiv);
+
+        scanner.close();
+    }
     public static void main(String[] args) {
         MoonComputerTests computerTests = new MoonComputerTests();
-        computerTests.testBasicInputOutput();
+        computerTests.testMath();
     }
 }
