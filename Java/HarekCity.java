@@ -16,6 +16,10 @@ public class HarekCity {
         names[3] = toReplace[1];
     }
 
+    public String firstAndLastTogether(String[] names) {
+        return names[0] + " AND " + names[names.length - 1] + " TOGETHER";
+    }
+
     public static void main(String[] args) {
         String[] arr = new HarekCity().createEmptyNameArray();
         System.out.println(Arrays.toString(arr));
@@ -23,9 +27,12 @@ public class HarekCity {
         int[] ageArray = new HarekCity().createAgeArray(10, 20, 30, 40);
         System.out.println(Arrays.toString(ageArray));
 
-        String[] names = new String[]{"mixa", "ukio", "barek", "krou", "fiha"};
-        String[] toReplace = new String[]{"lopr", "boki"};
-        new HarekCity().fixNames(names, toReplace);
-        System.out.println(Arrays.toString(names));
+//        String[] names = new String[]{"mixa", "ukio", "barek", "krou", "fiha"};
+//        String[] toReplace = new String[]{"lopr", "boki"};
+//        new HarekCity().fixNames(names, toReplace);
+//        System.out.println(Arrays.toString(names));
+
+        String[] names = new String[]{"io", "pu", "re", "max", "kok", "mis", "hit", "kio", "pax", "rew"};
+        System.out.println(new HarekCity().firstAndLastTogether(names));
     }
 }
