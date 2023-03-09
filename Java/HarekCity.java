@@ -27,7 +27,7 @@ public class HarekCity {
         results[results.length - 1] = copyResults[0];
     }
 
-//    public String[] changeElectResultAgain(String[] results) {
+    //    public String[] changeElectResultAgain(String[] results) {
 //        String[] copyResults = Arrays.copyOf(results, results.length);
 //        String[] newArray = new String[3];
 //        newArray[0] = copyResults[2];
@@ -36,11 +36,21 @@ public class HarekCity {
 //        return newArray;
 //    }
     public String[] changeElectResultAgain(String[] results) {
-        return new String[] {
+        return new String[]{
                 results[2],
                 results[3],
                 results[4]
         };
+    }
+
+    public char[][] createKeyboard() {
+        char[][] numbers = {
+                {'1', '2', '3'},
+                {'4', '5', '6'},
+                {'7', '8', '9'},
+                {'*', '0', '#'}
+        };
+        return numbers;
     }
 
     public static void main(String[] args) {
@@ -65,5 +75,10 @@ public class HarekCity {
         String[] results = new String[]{"mix", "max", "pex", "fux", "rox"};
         String[] changedResults = new HarekCity().changeElectResultAgain(results);
         System.out.println(Arrays.toString(changedResults));
+
+        char[][] keyboard = new HarekCity().createKeyboard();
+        for (int i = 0; i < keyboard.length; i++) {
+            System.out.println(Arrays.toString(keyboard[i]));
+        }
     }
 }
