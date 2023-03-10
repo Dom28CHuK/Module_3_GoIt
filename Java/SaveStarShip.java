@@ -9,6 +9,12 @@ public class SaveStarShip {
         }
     }
 
+    public String choosePlanet(long distanceToEarth) {
+        if (distanceToEarth < 45677) {
+            return "Earth";
+        } else return "Pern";
+    }
+
     public String[] getPlanets(String galaxy) {
         String[] planets = {};
         if (galaxy.equals("DangerBanger")) {
@@ -28,5 +34,7 @@ public class SaveStarShip {
 
         //Should be [Fobius, Demius]
         System.out.println(Arrays.toString(ship.getPlanets("DangerBanger")));
+
+        System.out.println(ship.choosePlanet(1000000));
     }
 }
