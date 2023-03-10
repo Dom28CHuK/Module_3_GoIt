@@ -50,6 +50,18 @@ public class SaveStarShip {
         return firstDigit * 10;
     }
 
+    public int calculateNeededFuel(int distance) {
+        int fuel = 1000;
+        int years = distance / 1;
+        int extraFuel = 0;
+
+        if (years > 20) {
+            extraFuel = (years - 20) * 5;
+        }
+        fuel += extraFuel;
+        return fuel;
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -67,5 +79,9 @@ public class SaveStarShip {
         System.out.println(ship.roundSpeed(10)); //10
         System.out.println(ship.roundSpeed(15)); //20
         System.out.println(ship.roundSpeed(89)); //90
+
+        System.out.println(ship.calculateNeededFuel(1)); //1000
+        System.out.println(ship.calculateNeededFuel(20));//1000
+        System.out.println(ship.calculateNeededFuel(25));//1025
     }
 }
