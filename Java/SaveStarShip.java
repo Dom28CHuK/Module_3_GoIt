@@ -36,6 +36,20 @@ public class SaveStarShip {
             return count * 200;
         } else return count * 50;
     }
+
+//    public int roundSpeed(int speed) {
+//        return (int) (Math.round(speed / 10.0) * 10);
+//    }
+    public int roundSpeed(int speed) {
+        int firstDigit = speed / 10;
+        int lastDigit = speed % 10;
+
+        if (lastDigit >= 5) {
+            firstDigit++;
+        }
+        return firstDigit * 10;
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -49,5 +63,9 @@ public class SaveStarShip {
 
         System.out.println(ship.calculateFuelPrice("STAR100", 10));
         System.out.println(ship.calculateFuelPrice("STAR7", 5));
+
+        System.out.println(ship.roundSpeed(10)); //10
+        System.out.println(ship.roundSpeed(15)); //20
+        System.out.println(ship.roundSpeed(89)); //90
     }
 }
