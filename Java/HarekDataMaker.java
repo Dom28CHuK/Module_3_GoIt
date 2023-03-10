@@ -2,10 +2,15 @@ import java.util.Arrays;
 
 public class HarekDataMaker {
     public String aggregateSingle(String name, String age, String planet) {
-
+        return "name - " + name + ", age - " + age + ", planet - " + planet;
     }
     public String[] aggregateAll(String[] names, int[] ages, String[] planets) {
+        String[] result = new String[names.length];
 
+        for (int i = 0; i < names.length; i++) {
+            result[i] = aggregateSingle(names[i], Integer.toString(ages[i]), planets[i]);
+        }
+        return result;
     }
     public static void main(String[] args) {
         String[] names = new String[] {"hter", "pou", "diz"};
