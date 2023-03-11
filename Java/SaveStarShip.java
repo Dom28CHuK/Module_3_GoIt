@@ -93,6 +93,21 @@ public class SaveStarShip {
         scanner.close();
     }
 
+    public String getMyPrizes(int ticket) {
+        String result = "";
+
+        if (ticket % 10 == 0) {
+            result += "crystall ";
+        }
+        if (ticket % 10 == 7) {
+            result += "chip ";
+        }
+        if (ticket > 200) {
+            result += "coin ";
+        }
+        return result.trim();
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -115,6 +130,8 @@ public class SaveStarShip {
         System.out.println(ship.calculateNeededFuel(20));//1000
         System.out.println(ship.calculateNeededFuel(25));//1025
 
-        ship.calculateMaxPower();
+        //ship.calculateMaxPower();
+
+        System.out.println(ship.getMyPrizes(777));
     }
 }
