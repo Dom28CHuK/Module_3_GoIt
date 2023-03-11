@@ -62,6 +62,37 @@ public class SaveStarShip {
         return fuel;
     }
 
+    public void calculateMaxPower() {
+        Scanner scanner = new Scanner(System.in);
+        int number1 = scanner.nextInt();
+        int number2 = scanner.nextInt();
+        int number3 = scanner.nextInt();
+
+        int maxNumber = number1;
+
+        if (number2 > maxNumber) {
+            maxNumber = number2;
+        }
+        if (number3 > maxNumber) {
+            maxNumber = number3;
+        }
+
+        float cof;
+
+        if (maxNumber < 10) {
+            cof = 0.7f;
+        } else if (maxNumber <= 100) {
+            cof = 1.2f;
+        } else {
+            cof = 2.1f;
+        }
+
+        float result = maxNumber * cof;
+
+        System.out.println(result);
+        scanner.close();
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -83,5 +114,7 @@ public class SaveStarShip {
         System.out.println(ship.calculateNeededFuel(1)); //1000
         System.out.println(ship.calculateNeededFuel(20));//1000
         System.out.println(ship.calculateNeededFuel(25));//1025
+
+        ship.calculateMaxPower();
     }
 }
