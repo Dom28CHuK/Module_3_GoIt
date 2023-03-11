@@ -108,6 +108,15 @@ public class SaveStarShip {
         return result.trim();
     }
 
+    public boolean isHangarOk(int side1, int side2, int price) {
+        int area = side1 * side2;
+        int longerSide = Math.max(side1, side2);
+        int shortedSide = Math.min(side1, side2);
+        int priceArea = price / area;
+
+        return area >= 1500 && longerSide <= shortedSide * 2 && priceArea <= 1000;
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -133,5 +142,7 @@ public class SaveStarShip {
         //ship.calculateMaxPower();
 
         System.out.println(ship.getMyPrizes(777));
+
+        System.out.println(ship.isHangarOk(100, 75, 1000000));
     }
 }
