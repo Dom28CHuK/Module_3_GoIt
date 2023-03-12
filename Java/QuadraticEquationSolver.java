@@ -33,10 +33,21 @@ public class QuadraticEquationSolver {
         return number % 2 == 0 ? "even" : "odd";
     }
 
+    public int findMin(int[] triple) {
+        int minNumber = triple[0];
+        for (int i = 1; i < triple.length; i++) {
+            minNumber = triple[i] < minNumber ? triple[i] : minNumber;
+        }
+        return minNumber;
+    }
+
     public static void main(String[] args) {
         QuadraticEquationSolver captainDispute = new QuadraticEquationSolver();
 
         System.out.println(captainDispute.evenOrOdd(10));
         System.out.println(captainDispute.evenOrOdd(5));
+
+        System.out.println(captainDispute.findMin(new int[] {1, 10, 3}));
+        System.out.println(captainDispute.findMin(new int[] {50, 4, 100}));
     }
 }
