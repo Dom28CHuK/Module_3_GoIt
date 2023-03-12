@@ -23,4 +23,20 @@ public class QuadraticEquationSolver {
 
         return roots;
     }
+
+    public String evenOrOdd(int number) {
+//        if (number%2 == 0) {
+//            return "even";
+//        } else {
+//            return "odd";
+//        }
+        return number % 2 == 0 ? "even" : "odd";
+    }
+
+    public static void main(String[] args) {
+        QuadraticEquationSolver captainDispute = new QuadraticEquationSolver();
+
+        System.out.println(captainDispute.evenOrOdd(10));
+        System.out.println(captainDispute.evenOrOdd(5));
+    }
 }
